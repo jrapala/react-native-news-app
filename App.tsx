@@ -18,7 +18,7 @@ import {
 
 declare const global: { HermesInternal: null | {} }
 
-const App = () => {
+const App: React.FC = () => {
 	return (
 		<>
 			<StatusBar barStyle="dark-content" />
