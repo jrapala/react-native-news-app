@@ -29,6 +29,7 @@
 		"eslint-plugin-react": "7.20.0",
 		"eslint-plugin-react-hooks": "4.0.4",
 		"eslint-plugin-react-native": "3.8.1",
+		"eslint-plugin-react-native-a11y": "2.0.0",
 		"jest": "24.9.0",
 		"metro-react-native-babel-preset": "0.58.0",
 		"prettier": "2.0.4",

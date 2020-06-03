@@ -5,6 +5,7 @@ module.exports = {
 		"prettier/react",
 		"plugin:react/recommended",
 		"plugin:react-native/all",
+		"plugin:react-native-a11y/all",
 		"plugin:react-hooks/recommended",
 		"plugin:import/warnings",
 		"plugin:import/typescript",
@@ -32,7 +33,6 @@ module.exports = {
 	overrides: [
 		{
 			files: ["*.ts", "*.tsx"],
-			// excludeFiles: ["*.js", "*.jsx"],
 			rules: {
 				"@typescript-eslint/explicit-function-return-type": ["error"],
 			},
