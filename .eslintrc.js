@@ -14,13 +14,14 @@ module.exports = {
 		"prettier/react",
 	],
 	parser: "@typescript-eslint/parser",
-	plugins: ["@typescript-eslint", "import", "prettier"],
+	plugins: ["@typescript-eslint", "better-styled-components", "import", "prettier"],
 	rules: {
 		quotes: [1, "double", { allowTemplateLiterals: true }],
 		semi: ["warn", "never"],
 		"sort-keys": ["warn", "asc", { caseSensitive: false, natural: true }],
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/no-use-before-define": 0,
+		"better-styled-components/sort-declarations-alphabetically": 1,
 		"prettier/prettier": "warn",
 		"react/jsx-filename-extension": [
 			1,
