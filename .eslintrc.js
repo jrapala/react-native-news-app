@@ -6,7 +6,7 @@ module.exports = {
 		"plugin:@typescript-eslint/recommended",
 		"plugin:import/warnings",
 		"plugin:import/typescript",
-		'plugin:jest/recommended'
+		"plugin:jest/recommended",
 		"plugin:react/recommended",
 		"plugin:react-hooks/recommended",
 		"plugin:react-native/all",
@@ -14,13 +14,19 @@ module.exports = {
 		"prettier/react",
 	],
 	parser: "@typescript-eslint/parser",
-	plugins: ["@typescript-eslint", "better-styled-components", "import", "prettier"],
+	plugins: [
+		"@typescript-eslint",
+		"better-styled-components",
+		"import",
+		"prettier",
+	],
 	rules: {
 		quotes: [1, "double", { allowTemplateLiterals: true }],
 		semi: ["warn", "never"],
 		"sort-keys": ["warn", "asc", { caseSensitive: false, natural: true }],
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/no-use-before-define": 0,
+		"@typescript-eslint/member-delimiter-style": 0,
 		"better-styled-components/sort-declarations-alphabetically": 1,
 		"prettier/prettier": "warn",
 		"react/jsx-filename-extension": [
@@ -29,6 +35,7 @@ module.exports = {
 				extensions: [".js", ".jsx", ".ts", ".tsx"],
 			},
 		],
+		"react-native/no-raw-text": 0,
 		"react-native/sort-styles": "warn",
 		"import/no-named-as-default-member": 0,
 	},
