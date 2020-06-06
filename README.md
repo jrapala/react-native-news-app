@@ -1,4 +1,4 @@
-# Juliette's React Native Template
+# Juliette's React Native Project Template
 
 A template for developing cross-platform React Native apps using TypeScript.
 
