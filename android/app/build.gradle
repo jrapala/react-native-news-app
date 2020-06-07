@@ -129,7 +129,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.reactnativetemplate"
+        applicationId "com.reactnativenews"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

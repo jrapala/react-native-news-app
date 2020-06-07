@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-               BuildableName = "ReactNativeTemplate-tvOS.app"
-               BlueprintName = "ReactNativeTemplate-tvOS"
-               ReferencedContainer = "container:ReactNativeTemplate.xcodeproj">
+               BuildableName = "ReactNativeNews-tvOS.app"
+               BlueprintName = "ReactNativeNews-tvOS"
+               ReferencedContainer = "container:ReactNativeNews.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2D02E48F1E0B4A5D006451C7"
-               BuildableName = "ReactNativeTemplate-tvOSTests.xctest"
-               BlueprintName = "ReactNativeTemplate-tvOSTests"
-               ReferencedContainer = "container:ReactNativeTemplate.xcodeproj">
+               BuildableName = "ReactNativeNews-tvOSTests.xctest"
+               BlueprintName = "ReactNativeNews-tvOSTests"
+               ReferencedContainer = "container:ReactNativeNews.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,9 +55,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ReactNativeTemplate-tvOS.app"
-            BlueprintName = "ReactNativeTemplate-tvOS"
-            ReferencedContainer = "container:ReactNativeTemplate.xcodeproj">
+            BuildableName = "ReactNativeNews-tvOS.app"
+            BlueprintName = "ReactNativeNews-tvOS"
+            ReferencedContainer = "container:ReactNativeNews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -72,9 +72,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2D02E47A1E0B4A5D006451C7"
-            BuildableName = "ReactNativeTemplate-tvOS.app"
-            BlueprintName = "ReactNativeTemplate-tvOS"
-            ReferencedContainer = "container:ReactNativeTemplate.xcodeproj">
+            BuildableName = "ReactNativeNews-tvOS.app"
+            BlueprintName = "ReactNativeNews-tvOS"
+            ReferencedContainer = "container:ReactNativeNews.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'ReactNativeTemplate' do
-  # Pods for ReactNativeTemplate
+target 'ReactNativeNews' do
+  # Pods for ReactNativeNews
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -77,7 +77,7 @@ target 'ReactNativeTemplate' do
   pod 'glog', :podspec => '../node_modules/react-native/third-party-podspecs/glog.podspec'
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
-  target 'ReactNativeTemplateTests' do
+  target 'ReactNativeNewsTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -94,10 +94,10 @@ target 'ReactNativeTemplate' do
   end
 end
 
-target 'ReactNativeTemplate-tvOS' do
-  # Pods for ReactNativeTemplate-tvOS
+target 'ReactNativeNews-tvOS' do
+  # Pods for ReactNativeNews-tvOS
 
-  target 'ReactNativeTemplate-tvOSTests' do
+  target 'ReactNativeNews-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end
