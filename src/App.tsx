@@ -23,7 +23,7 @@ const App: React.FC = () => {
 }
 
 const StyledSafeAreaView = styled(SafeAreaView)`
-	background-color: ${(props): string => props.theme.primaryColor};
+	background-color: ${(props): string => props.theme.backgroundColor};
 	flex: 1;
 `
 
@@ -33,13 +33,13 @@ const SectionContainer = styled(View)`
 `
 
 const SectionTitle = styled(Text)`
-	color: ${(props): string => props.theme.textColorOnPrimary};
+	color: ${(props): string => props.theme.primaryFontColor};
 	font-size: 24px;
 	font-weight: 600;
 `
 
 const SectionDescription = styled(Text)`
-	color: ${(props): string => props.theme.textColorOnPrimary};
+	color: ${(props): string => props.theme.secondaryFontColor};
 	font-size: 18px;
 	font-weight: 400;
 	margin-top: 8px;

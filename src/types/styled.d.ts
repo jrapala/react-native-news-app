@@ -2,7 +2,12 @@ import "styled-components/native"
 
 declare module "styled-components" {
 	export interface DefaultTheme {
-		primaryColor: string
-		textColorOnPrimary: string
+		backgroundColor: string
+		borderRadius: string
+		boxShadow: string
+		highlight: string
+		primaryFontColor: string
+		secondaryFontColor: string
+		starColor: string
 	}
 }
