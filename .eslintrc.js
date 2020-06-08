@@ -23,6 +23,7 @@ module.exports = {
 	rules: {
 		quotes: [1, "double", { allowTemplateLiterals: true }],
 		semi: ["warn", "never"],
+		"no-mixed-spaces-and-tabs": ["warn", "smart-tabs"],
 		"sort-keys": ["warn", "asc", { caseSensitive: false, natural: true }],
 		"@typescript-eslint/explicit-function-return-type": 0,
 		"@typescript-eslint/no-use-before-define": 0,
@@ -35,6 +36,7 @@ module.exports = {
 				extensions: [".js", ".jsx", ".ts", ".tsx"],
 			},
 		],
+		"react/prop-types": 0,
 		"react-native/no-raw-text": 0,
 		"react-native/sort-styles": "warn",
 		"import/no-named-as-default-member": 0,
@@ -43,7 +45,8 @@ module.exports = {
 		{
 			files: ["*.ts", "*.tsx"],
 			rules: {
-				"@typescript-eslint/explicit-function-return-type": ["error"],
+				// Shutting off to speed development
+				// "@typescript-eslint/explicit-function-return-type": ["error"],
 			},
 		},
 	],
