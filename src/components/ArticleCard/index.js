@@ -1,6 +1,7 @@
 import React from "react"
 import { Text, View } from "react-native"
 import styled from "styled-components/native"
+import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
 
@@ -24,7 +25,15 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 	return (
 		<ArticleWrapper>
 			<TextWrapper>
-				<ArticleDate>{date}</ArticleDate>
+				<Row>
+					<ArticleDate>{date}</ArticleDate>
+					<Icon
+						name="star-border"
+						type="materialicon"
+						color="#000000"
+						size={30}
+					/>
+				</Row>
 				<Headline>{article.description}</Headline>
 				<Link>Read More</Link>
 			</TextWrapper>
@@ -45,7 +54,10 @@ const ArticleWrapper = styled(View)`
 const TextWrapper = styled(View)`
 	padding: 5%;
 `
-
+const Row = styled(View)`
+	flex-direction: row;
+	justify-content: space-between;
+`
 const ArticleDate = styled(Text)`
 	color: ${(props): string => props.theme.secondaryFontColor};
 	font-size: 17px;
