@@ -4,6 +4,7 @@ import styled from "styled-components/native"
 import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
+import Link from "../../components/Link"
 
 interface Props {
 	article: Article;
@@ -85,14 +86,6 @@ const Headline = styled(Text)`
 	font-size: 20px;
 	font-weight: 600;
 	margin-top: 5%;
-`
-
-const Link = styled(Text)`
-	color: ${(props): string => props.theme.highlight};
-	font-size: 17px;
-	font-weight: 500;
-	margin-top: 5%;
-	text-align: right;
 `
 
 export default ArticleCard
