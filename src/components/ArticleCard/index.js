@@ -1,5 +1,5 @@
 import React from "react"
-import { Text, View } from "react-native"
+import { Image, Text, View } from "react-native"
 import styled from "styled-components/native"
 import { Icon } from "react-native-elements"
 
@@ -24,6 +24,13 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 
 	return (
 		<ArticleWrapper>
+			<ImageWrapper>
+				<StyledImage
+					accessibilityIgnoresInvertColors={false}
+					source={{ uri: article.urlToImage }}
+					resizeMode={"cover"}
+				/>
+			</ImageWrapper>
 			<TextWrapper>
 				<Row>
 					<ArticleDate>{date}</ArticleDate>
@@ -44,12 +51,20 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 const ArticleWrapper = styled(View)`
 	background-color: ${(props): string => props.theme.backgroundColor};
 	border-radius: ${(props): string => props.theme.borderRadius};
-	margin-top: 5%;
-	padding: 5%;
+	margin-bottom: 10%;
 	shadow-color: #a3b1c5;
 	shadow-offset: 5px 5px;
 	shadow-opacity: 0.5;
-	width: 90%;
+	width: 95%;
+`
+const ImageWrapper = styled(View)`
+	height: 150px;
+	width: 100%;
+`
+const StyledImage = styled(Image)`
+	border-top-left-radius: ${(props): string => props.theme.borderRadius};
+	border-top-right-radius: ${(props): string => props.theme.borderRadius};
+	flex: 1;
 `
 const TextWrapper = styled(View)`
 	padding: 5%;

@@ -11,13 +11,15 @@ const TopHeadlines: React.FC = () => {
 		<StyledSafeAreaView>
 			<Container>
 				<H1>Top Headlines</H1>
-				<FlatList
-					data={articles}
-					renderItem={({ item }: { item: Article }) => (
-						<ArticleCard article={item} />
-					)}
-					keyExtractor={item => item.title}
-				/>
+				<Articles>
+					<FlatList
+						data={articles}
+						renderItem={({ item }: { item: Article }) => (
+							<ArticleCard article={item} />
+						)}
+						keyExtractor={item => item.title}
+					/>
+				</Articles>
 			</Container>
 		</StyledSafeAreaView>
 	)
@@ -33,6 +35,11 @@ const Container = styled(View)`
 	flex: 1;
 	margin-top: 5%;
 	width: 80%;
+`
+
+const Articles = styled(View)`
+	align-items: center;
+	margin-top: 10%;
 `
 
 const H1 = styled(Text)`
