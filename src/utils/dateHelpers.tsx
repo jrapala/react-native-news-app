@@ -1,4 +1,4 @@
-export const getDateString = (date: string | null) => {
+export const getDateString = (date: string | null): string => {
 	const dateOptions = {
 		day: "numeric",
 		month: "long",

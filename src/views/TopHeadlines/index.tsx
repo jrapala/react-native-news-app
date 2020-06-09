@@ -17,7 +17,7 @@ const TopHeadlines: React.FC = () => {
 						renderItem={({ item }: { item: Article }) => (
 							<ArticleCard article={item} />
 						)}
-						keyExtractor={item => item.title}
+						keyExtractor={(item): string => item.title}
 					/>
 				</Articles>
 			</Container>

@@ -24,7 +24,7 @@ const ButtonText = styled(Text)<ButtonTextProps>`
 	font-size: 17px;
 	font-weight: 500;
 	margin-top: 5%;
-	text-align: ${props => props.alignment};
+	text-align: ${(props): string => props.alignment};
 `
 
 export default Link
