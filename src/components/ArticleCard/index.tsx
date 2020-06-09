@@ -5,24 +5,13 @@ import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
 import Link from "../Link"
+import ArticleDate from "../ArticleDate"
 
 interface Props {
 	article: Article
 }
 
 const ArticleCard: React.FC<Props> = ({ article }) => {
-	const dateOptions = {
-		day: "numeric",
-		month: "long",
-		year: "numeric",
-	}
-	const date = article.publishedAt
-		? new Date(Date.parse(article.publishedAt)).toLocaleDateString(
-				undefined,
-				dateOptions
-		  )
-		: ""
-
 	return (
 		<ArticleWrapper>
 			{article.urlToImage && (
@@ -36,7 +25,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 			)}
 			<TextWrapper>
 				<Row>
-					<ArticleDate>{date}</ArticleDate>
+					<ArticleDate publishDate={article.publishedAt} />
 					<Icon
 						name="star-border"
 						type="materialicon"
@@ -75,12 +64,6 @@ const TextWrapper = styled(View)`
 const Row = styled(View)`
 	flex-direction: row;
 	justify-content: space-between;
-`
-const ArticleDate = styled(Text)`
-	color: ${(props): string => props.theme.secondaryFontColor};
-	font-size: 17px;
-	font-weight: 400;
-	margin-top: 8px;
 `
 
 const Headline = styled(Text)`
