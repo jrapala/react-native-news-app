@@ -30,7 +30,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 					<FavoriteStar />
 				</Row>
 				<Headline>{article.description}</Headline>
-				<Link>Read More</Link>
+				<Link alignment="right">Read More</Link>
 			</TextWrapper>
 		</ArticleWrapper>
 	)
