@@ -1,12 +1,12 @@
 import React from "react"
 import { Image, View } from "react-native"
 import styled from "styled-components/native"
-import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
 import Link from "../Link"
 import ArticleDate from "../ArticleDate"
 import Headline from "../Headline"
+import FavoriteStar from "../FavoriteStar"
 
 interface Props {
 	article: Article
@@ -27,12 +27,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 			<TextWrapper>
 				<Row>
 					<ArticleDate publishDate={article.publishedAt} />
-					<Icon
-						name="star-border"
-						type="materialicon"
-						color="#000000"
-						size={30}
-					/>
+					<FavoriteStar />
 				</Row>
 				<Headline>{article.description}</Headline>
 				<Link>Read More</Link>
