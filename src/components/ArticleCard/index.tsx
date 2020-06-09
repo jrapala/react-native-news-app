@@ -1,11 +1,12 @@
 import React from "react"
-import { Image, Text, View } from "react-native"
+import { Image, View } from "react-native"
 import styled from "styled-components/native"
 import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
 import Link from "../Link"
 import ArticleDate from "../ArticleDate"
+import Headline from "../Headline"
 
 interface Props {
 	article: Article
@@ -64,13 +65,6 @@ const TextWrapper = styled(View)`
 const Row = styled(View)`
 	flex-direction: row;
 	justify-content: space-between;
-`
-
-const Headline = styled(Text)`
-	color: ${(props): string => props.theme.primaryFontColor};
-	font-size: 20px;
-	font-weight: 600;
-	margin-top: 5%;
 `
 
 export default ArticleCard
