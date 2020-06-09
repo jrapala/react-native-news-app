@@ -3,10 +3,28 @@ import React, { useState } from "react"
 import { StatusBar } from "react-native"
 import { ThemeProvider } from "styled-components/native"
 import { NavigationContainer } from "@react-navigation/native"
+import { createStackNavigator } from "@react-navigation/stack"
 
 import { iOSDarkTheme } from "./styles"
 import TopHeadlines from "./views/TopHeadlines"
-// import HeadlineDetails from "./views/HeadlineDetails"
+import HeadlineDetails from "./views/HeadlineDetails"
+
+const Stack = createStackNavigator()
+
+const StackNavigator: React.FC = () => (
+	<Stack.Navigator initialRouteName="TopHeadlines">
+		<Stack.Screen
+			name="TopHeadlines"
+			component={TopHeadlines}
+			options={{ headerTransparent: true, title: "" }}
+		/>
+		<Stack.Screen
+			name="HeadlineDetails"
+			component={HeadlineDetails}
+			options={{ headerTransparent: true, title: "" }}
+		/>
+	</Stack.Navigator>
+)
 
 const App: React.FC = () => {
 	const [theme] = useState(iOSDarkTheme)
@@ -15,8 +33,7 @@ const App: React.FC = () => {
 		<NavigationContainer>
 			<ThemeProvider theme={theme}>
 				<StatusBar barStyle="dark-content" />
-				<TopHeadlines />
-				{/* <HeadlineDetails /> */}
+				<StackNavigator />
 			</ThemeProvider>
 		</NavigationContainer>
 	)
