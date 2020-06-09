@@ -1,7 +1,7 @@
 import "react-native-gesture-handler"
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 import { StatusBar } from "react-native"
-import { ThemeProvider } from "styled-components/native"
+import { ThemeProvider, ThemeContext } from "styled-components/native"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 
@@ -11,20 +11,29 @@ import HeadlineDetails from "./views/HeadlineDetails"
 
 const Stack = createStackNavigator()
 
-const StackNavigator: React.FC = () => (
-	<Stack.Navigator initialRouteName="TopHeadlines">
-		<Stack.Screen
-			name="TopHeadlines"
-			component={TopHeadlines}
-			options={{ headerTransparent: true, title: "" }}
-		/>
-		<Stack.Screen
-			name="HeadlineDetails"
-			component={HeadlineDetails}
-			options={{ headerTransparent: true, title: "" }}
-		/>
-	</Stack.Navigator>
-)
+const StackNavigator: React.FC = () => {
+	const themeContext = useContext(ThemeContext)
+
+	return (
+		<Stack.Navigator initialRouteName="TopHeadlines">
+			<Stack.Screen
+				name="TopHeadlines"
+				component={TopHeadlines}
+				options={{ headerTransparent: true, title: "" }}
+			/>
+			<Stack.Screen
+				name="HeadlineDetails"
+				component={HeadlineDetails}
+				options={{
+					headerBackTitleStyle: { color: themeContext.highlight },
+					headerTintColor: themeContext.highlight,
+					headerTransparent: true,
+					title: "",
+				}}
+			/>
+		</Stack.Navigator>
+	)
+}
 
 const App: React.FC = () => {
 	const [theme] = useState(iOSDarkTheme)

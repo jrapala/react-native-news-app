@@ -2,7 +2,6 @@ import React from "react"
 import { SafeAreaView, View } from "react-native"
 import styled from "styled-components/native"
 
-import Link from "../../components/Link"
 import ArticleDate from "../../components/ArticleDate"
 import FavoriteStar from "../../components/FavoriteStar"
 import Headline from "../../components/Headline"
@@ -11,7 +10,6 @@ const HeadlineDetails: React.FC = () => {
 	return (
 		<StyledSafeAreaView>
 			<Container>
-				<Link alignment="right">Close</Link>
 				<Row>
 					<ArticleDate publishDate={null} />
 					<FavoriteStar />
