@@ -2,25 +2,14 @@ import React from "react"
 import { Text } from "react-native"
 import styled from "styled-components/native"
 
+import { getDateString } from "../../utils/dateHelpers"
+
 interface Props {
 	publishDate: string | null
 }
 
 const ArticleDate: React.FC<Props> = ({ publishDate }) => {
-	const dateOptions = {
-		day: "numeric",
-		month: "long",
-		year: "numeric",
-	}
-
-	const dateString = publishDate
-		? new Date(Date.parse(publishDate)).toLocaleDateString(
-				undefined,
-				dateOptions
-		  )
-		: ""
-
-	return <DateText>{dateString}</DateText>
+	return <DateText>{getDateString(publishDate)}</DateText>
 }
 
 const DateText = styled(Text)`
