@@ -1,20 +1,32 @@
 import React from "react"
 import { SafeAreaView, View } from "react-native"
+import { RouteProp } from "@react-navigation/native"
 import styled from "styled-components/native"
 
+import { RootStackParamList } from "../../types/navigation"
 import ArticleDate from "../../components/ArticleDate"
 import FavoriteStar from "../../components/FavoriteStar"
 import Headline from "../../components/Headline"
 
-const HeadlineDetails: React.FC = () => {
+type HeadlineDetailsScreenRouteProp = RouteProp<
+	RootStackParamList,
+	"HeadlineDetails"
+>
+interface Props {
+	route: HeadlineDetailsScreenRouteProp
+}
+
+const HeadlineDetails: React.FC<Props> = ({ route }) => {
+	const article = route.params.article
+
 	return (
 		<StyledSafeAreaView>
 			<Container>
 				<Row>
-					<ArticleDate publishDate={null} />
+					<ArticleDate publishDate={article.publishedAt} />
 					<FavoriteStar />
 				</Row>
-				<Headline>Headline</Headline>
+				<Headline>{article.description}</Headline>
 			</Container>
 		</StyledSafeAreaView>
 	)

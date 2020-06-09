@@ -5,11 +5,12 @@ import { ThemeProvider, ThemeContext } from "styled-components/native"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
 
+import { RootStackParamList } from "./types/navigation"
 import { iOSDarkTheme } from "./styles"
 import TopHeadlines from "./views/TopHeadlines"
 import HeadlineDetails from "./views/HeadlineDetails"
 
-const Stack = createStackNavigator()
+const Stack = createStackNavigator<RootStackParamList>()
 
 const StackNavigator: React.FC = () => {
 	const themeContext = useContext(ThemeContext)

@@ -34,7 +34,9 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 				</Row>
 				<Headline>{article.description}</Headline>
 				<Link
-					handleOnPress={() => navigation.navigate("HeadlineDetails")}
+					handleOnPress={(): void =>
+						navigation.navigate("HeadlineDetails", { article })
+					}
 					alignment="right"
 				>
 					Read More
