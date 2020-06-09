@@ -1,16 +1,25 @@
 import React from "react"
-import { Text } from "react-native"
+import { Text, TouchableOpacity, GestureResponderEvent } from "react-native"
 import styled from "styled-components/native"
 
 interface Props {
 	alignment: string
+	handleOnPress: ((event: GestureResponderEvent) => void) | undefined
 }
 
-const Link: React.FC<Props> = ({ alignment, children }) => {
-	return <LinkText alignment={alignment}>{children}</LinkText>
+interface ButtonTextProps {
+	alignment: string
 }
 
-const LinkText = styled(Text)<Props>`
+const Link: React.FC<Props> = ({ alignment, children, handleOnPress }) => {
+	return (
+		<TouchableOpacity onPress={handleOnPress}>
+			<ButtonText alignment={alignment}>{children}</ButtonText>
+		</TouchableOpacity>
+	)
+}
+
+const ButtonText = styled(Text)<ButtonTextProps>`
 	color: ${(props): string => props.theme.highlight};
 	font-size: 17px;
 	font-weight: 500;

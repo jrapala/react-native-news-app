@@ -1,6 +1,7 @@
 import React from "react"
 import { Image, View } from "react-native"
 import styled from "styled-components/native"
+import { useNavigation } from "@react-navigation/native"
 
 import { Article } from "../../types/article"
 import Link from "../Link"
@@ -13,6 +14,8 @@ interface Props {
 }
 
 const ArticleCard: React.FC<Props> = ({ article }) => {
+	const navigation = useNavigation()
+
 	return (
 		<ArticleWrapper>
 			{article.urlToImage && (
@@ -30,7 +33,12 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 					<FavoriteStar />
 				</Row>
 				<Headline>{article.description}</Headline>
-				<Link alignment="right">Read More</Link>
+				<Link
+					handleOnPress={() => navigation.navigate("HeadlineDetails")}
+					alignment="right"
+				>
+					Read More
+				</Link>
 			</TextWrapper>
 		</ArticleWrapper>
 	)
