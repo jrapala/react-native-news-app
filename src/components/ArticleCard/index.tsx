@@ -4,10 +4,10 @@ import styled from "styled-components/native"
 import { Icon } from "react-native-elements"
 
 import { Article } from "../../types/article"
-import Link from "../../components/Link"
+import Link from "../Link"
 
 interface Props {
-	article: Article;
+	article: Article
 }
 
 const ArticleCard: React.FC<Props> = ({ article }) => {
@@ -25,13 +25,15 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 
 	return (
 		<ArticleWrapper>
-			<ImageWrapper>
-				<StyledImage
-					accessibilityIgnoresInvertColors={false}
-					source={{ uri: article.urlToImage }}
-					resizeMode={"cover"}
-				/>
-			</ImageWrapper>
+			{article.urlToImage && (
+				<ImageWrapper>
+					<StyledImage
+						accessibilityIgnoresInvertColors={false}
+						source={{ uri: article.urlToImage }}
+						resizeMode={"cover"}
+					/>
+				</ImageWrapper>
+			)}
 			<TextWrapper>
 				<Row>
 					<ArticleDate>{date}</ArticleDate>
