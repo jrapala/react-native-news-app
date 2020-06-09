@@ -4,6 +4,7 @@ import { ThemeProvider } from "styled-components/native"
 
 import { iOSDarkTheme } from "./styles"
 import TopHeadlines from "./views/TopHeadlines"
+// import HeadlineDetails from "./views/HeadlineDetails"
 
 const App: React.FC = () => {
 	const [theme] = useState(iOSDarkTheme)
@@ -12,6 +13,7 @@ const App: React.FC = () => {
 		<ThemeProvider theme={theme}>
 			<StatusBar barStyle="dark-content" />
 			<TopHeadlines />
+			{/* <HeadlineDetails /> */}
 		</ThemeProvider>
 	)
 }
