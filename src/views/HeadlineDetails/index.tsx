@@ -1,7 +1,8 @@
 import React from "react"
-import { SafeAreaView, View } from "react-native"
+import { Dimensions, SafeAreaView, Text, View } from "react-native"
 import { RouteProp } from "@react-navigation/native"
 import styled from "styled-components/native"
+import AutoHeightImage from "react-native-auto-height-image"
 
 import { RootStackParamList } from "../../types/navigation"
 import ArticleDate from "../../components/ArticleDate"
@@ -26,7 +27,16 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 					<ArticleDate publishDate={article.publishedAt} />
 					<FavoriteStar />
 				</Row>
-				<Headline>{article.description}</Headline>
+				<Headline>{article.title}</Headline>
+				<Author>{article.author}</Author>
+				{article.urlToImage && (
+					<AutoHeightImage
+						accessibilityIgnoresInvertColors={false}
+						source={{ uri: article.urlToImage }}
+						width={Dimensions.get("window").width * 0.8}
+					/>
+				)}
+				<Description>{article.description}</Description>
 			</Container>
 		</StyledSafeAreaView>
 	)
@@ -48,6 +58,18 @@ const Row = styled(View)`
 	flex-direction: row;
 	justify-content: space-between;
 	margin-top: 10%;
+`
+
+const Author = styled(Text)`
+	color: ${(props): string => props.theme.secondaryFontColor};
+	font-size: 17px;
+	font-weight: 600;
+	margin-vertical: 5%;
+`
+
+const Description = styled(Text)`
+	font-size: 17px;
+	margin-vertical: 5%;
 `
 
 export default HeadlineDetails

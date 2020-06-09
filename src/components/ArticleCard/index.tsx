@@ -32,7 +32,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 					<ArticleDate publishDate={article.publishedAt} />
 					<FavoriteStar />
 				</Row>
-				<Headline>{article.description}</Headline>
+				<Headline>{article.title}</Headline>
 				<Link
 					handleOnPress={(): void =>
 						navigation.navigate("HeadlineDetails", { article })
