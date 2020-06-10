@@ -25,7 +25,7 @@ const ButtonText = styled(Text)<ButtonTextProps>`
 	color: ${(props): string => props.theme.highlight};
 	font-size: ${normalize(13) + "px"};
 	font-weight: 500;
-	margin-top: 5%;
+	margin-vertical: 5%;
 	text-align: ${(props): string => props.alignment};
 `
 

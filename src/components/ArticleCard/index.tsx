@@ -87,7 +87,7 @@ const ArticleWrapper = styled(View)<DimensionProps>`
 
 const TextWrapper = styled(View)`
 	flex-shrink: 1;
-	padding: 5%;
+	padding: 5% 5% 0 5%;
 `
 const Row = styled(View)`
 	flex-direction: row;
