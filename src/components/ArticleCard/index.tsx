@@ -18,7 +18,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 	const navigation = useNavigation()
 	const { favorites, handleSelection } = useContext(FavoritesContext)
 
-	const handleStarPress = () => {
+	const handleStarPress = (): void => {
 		handleSelection(article.title)
 	}
 

@@ -23,7 +23,7 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 	const article = route.params.article
 	const { favorites, handleSelection } = useContext(FavoritesContext)
 
-	const handleStarPress = () => {
+	const handleStarPress = (): void => {
 		handleSelection(article.title)
 	}
 
@@ -49,7 +49,9 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 				<Description>{article.description}</Description>
 				<Link
 					alignment="left"
-					onPress={() => Linking.openURL(article.url || "")}
+					onPress={(): Promise<string> =>
+						Linking.openURL(article.url || "")
+					}
 				>
 					Go to Full Article
 				</Link>
