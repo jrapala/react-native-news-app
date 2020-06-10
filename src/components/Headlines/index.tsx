@@ -24,7 +24,7 @@ const Headlines: React.FC = () => {
 
 	return (
 		<Articles>
-			<FlatList
+			<StyledFlatList
 				data={data.headlines.articles}
 				renderItem={({ item }: { item: Article }) => (
 					<ArticleCard article={item} />
@@ -42,6 +42,7 @@ const Spinner = styled(ActivityIndicator)`
 `
 const Articles = styled(View)`
 	align-items: center;
+	flex: 1;
 	margin-top: 5%;
 `
 
@@ -52,6 +53,10 @@ const Error = styled(View)`
 `
 const ErrorText = styled(Text)`
 	font-size: 20px;
+`
+
+const StyledFlatList = styled(FlatList as new () => FlatList<Article>)`
+	width: 100%;
 `
 
 export default Headlines
