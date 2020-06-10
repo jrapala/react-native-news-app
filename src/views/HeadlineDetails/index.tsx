@@ -1,5 +1,6 @@
 import React, { useContext } from "react"
-import { Dimensions, Linking, SafeAreaView, Text, View } from "react-native"
+import { Dimensions, Linking, ScrollView, Text, View } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 import { RouteProp } from "@react-navigation/native"
 import styled from "styled-components/native"
 import AutoHeightImage from "react-native-auto-height-image"
@@ -66,7 +67,7 @@ const StyledSafeAreaView = styled(SafeAreaView)`
 	flex: 1;
 `
 
-const Container = styled(View)`
+const Container = styled(ScrollView)`
 	flex: 1;
 	margin-top: 5%;
 	width: 80%;

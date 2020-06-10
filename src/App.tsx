@@ -1,6 +1,7 @@
 import "react-native-gesture-handler"
 import React, { useContext, useState } from "react"
 import { StatusBar, YellowBox } from "react-native"
+import { SafeAreaProvider } from "react-native-safe-area-context"
 import { ThemeProvider, ThemeContext } from "styled-components/native"
 import { NavigationContainer } from "@react-navigation/native"
 import { createStackNavigator } from "@react-navigation/stack"
@@ -49,12 +50,14 @@ const App: React.FC = () => {
 	return (
 		<NavigationContainer>
 			<ThemeProvider theme={theme}>
-				<StatusBar barStyle="dark-content" />
-				<ApolloProvider client={client}>
-					<FavoritesProvider>
-						<StackNavigator />
-					</FavoritesProvider>
-				</ApolloProvider>
+				<SafeAreaProvider>
+					<StatusBar barStyle="dark-content" />
+					<ApolloProvider client={client}>
+						<FavoritesProvider>
+							<StackNavigator />
+						</FavoritesProvider>
+					</ApolloProvider>
+				</SafeAreaProvider>
 			</ThemeProvider>
 		</NavigationContainer>
 	)

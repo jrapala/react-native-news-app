@@ -1,5 +1,6 @@
 import React from "react"
-import { SafeAreaView, View, Text } from "react-native"
+import { View, Text } from "react-native"
+import { SafeAreaView } from "react-native-safe-area-context"
 import styled from "styled-components/native"
 
 import Headlines from "../../components/Headlines"
