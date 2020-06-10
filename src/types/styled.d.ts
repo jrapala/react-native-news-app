@@ -10,6 +10,7 @@ declare module "styled-components" {
 		highlight: string
 		primaryFontColor: string
 		secondaryFontColor: string
-		starColor: string
+		starSelectedColor: string
+		starUnselectedColor: string
 	}
 }

@@ -10,5 +10,6 @@ export const iOSDarkTheme: DefaultTheme = {
 	highlight: "#2427BD",
 	primaryFontColor: neutral[950],
 	secondaryFontColor: neutral[600],
-	starColor: "#D2A30F",
+	starSelectedColor: "#D2A30F",
+	starUnselectedColor: "#000000",
 }
