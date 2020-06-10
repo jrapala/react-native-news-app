@@ -1,12 +1,18 @@
-import React from "react"
+import React, { useEffect, useState } from "react"
 import { FlatList, SafeAreaView, View, Text } from "react-native"
 import styled from "styled-components/native"
 
-import { articles } from "../../constants/articles"
 import { Article } from "../../types/article"
 import ArticleCard from "../../components/ArticleCard"
+import { fetchHeadlines } from "../../utils/fetchHeadlines"
 
 const TopHeadlines: React.FC = () => {
+	const [articles, setArticles] = useState([])
+
+	useEffect(() => {
+		fetchHeadlines().then(headlines => setArticles(headlines))
+	}, [])
+
 	return (
 		<StyledSafeAreaView>
 			<Container>

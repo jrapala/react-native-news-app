@@ -87,7 +87,7 @@ const Author = styled(Text)`
 
 const Description = styled(Text)`
 	font-size: 17px;
-	margin-vertical: 5%;
+	margin-top: 5%;
 `
 
 export default HeadlineDetails
