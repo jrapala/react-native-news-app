@@ -14,6 +14,7 @@ export const FavoritesContext = createContext({} as ContextProps)
 export const FavoritesProvider: React.FC<ProviderProps> = ({ children }) => {
 	const [favorites, setFavorites] = useState<string[]>([])
 
+	// No IDs exist in articles fetched from API. Instead, using article titles as the unique identifier.
 	const handleSelection = useCallback((articleTitle: string) => {
 		setFavorites(favoriteArticleTitles => {
 			const index = favoriteArticleTitles.indexOf(articleTitle)
