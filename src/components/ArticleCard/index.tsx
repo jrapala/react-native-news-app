@@ -1,7 +1,8 @@
 import React, { useContext } from "react"
-import { Image, View } from "react-native"
+import { Dimensions, View } from "react-native"
 import styled from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
+import AutoHeightImage from "react-native-auto-height-image"
 
 import { Article } from "../../types/article"
 import Link from "../Link"
@@ -23,56 +24,53 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 	}
 
 	return (
-		<ArticleWrapper>
-			{article.urlToImage && (
-				<ImageWrapper>
-					<StyledImage
+		<BoxShadow>
+			<ArticleWrapper>
+				{article.urlToImage && (
+					<AutoHeightImage
 						accessibilityIgnoresInvertColors={false}
 						source={{ uri: article.urlToImage }}
-						resizeMode={"cover"}
+						width={Dimensions.get("window").width * 0.8}
 					/>
-				</ImageWrapper>
-			)}
-			<TextWrapper>
-				<Row>
-					<ArticleDate publishDate={article.publishedAt} />
-					<FavoriteStar
-						onPress={handleStarPress}
-						isFavorited={favorites.indexOf(article.title) !== -1}
-					/>
-				</Row>
-				<Headline>{article.title}</Headline>
-				<Link
-					onPress={(): void =>
-						navigation.navigate("HeadlineDetails", { article })
-					}
-					alignment="right"
-				>
-					Read More
-				</Link>
-			</TextWrapper>
-		</ArticleWrapper>
+				)}
+				<TextWrapper>
+					<Row>
+						<ArticleDate publishDate={article.publishedAt} />
+						<FavoriteStar
+							onPress={handleStarPress}
+							isFavorited={
+								favorites.indexOf(article.title) !== -1
+							}
+						/>
+					</Row>
+					<Headline>{article.title}</Headline>
+					<Link
+						onPress={(): void =>
+							navigation.navigate("HeadlineDetails", { article })
+						}
+						alignment="right"
+					>
+						Read More
+					</Link>
+				</TextWrapper>
+			</ArticleWrapper>
+		</BoxShadow>
 	)
 }
 
+const BoxShadow = styled(View)`
+	shadow-color: #a3b1c5;
+	shadow-offset: 5px 5px;
+	shadow-opacity: 0.5;
+`
 const ArticleWrapper = styled(View)`
 	background-color: ${(props): string => props.theme.backgroundColor};
 	border-radius: ${(props): string => props.theme.borderRadius};
 	margin-bottom: 10%;
-	shadow-color: #a3b1c5;
-	shadow-offset: 5px 5px;
-	shadow-opacity: 0.5;
+	overflow: hidden;
 	width: 95%;
 `
-const ImageWrapper = styled(View)`
-	height: 150px;
-	width: 100%;
-`
-const StyledImage = styled(Image)`
-	border-top-left-radius: ${(props): string => props.theme.borderRadius};
-	border-top-right-radius: ${(props): string => props.theme.borderRadius};
-	flex: 1;
-`
+
 const TextWrapper = styled(View)`
 	padding: 5%;
 `

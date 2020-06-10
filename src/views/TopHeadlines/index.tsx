@@ -45,7 +45,7 @@ const Container = styled(View)`
 
 const Articles = styled(View)`
 	align-items: center;
-	margin-top: 10%;
+	margin-top: 5%;
 `
 
 const H1 = styled(Text)`
