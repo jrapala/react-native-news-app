@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Image, View } from "react-native"
 import styled from "styled-components/native"
 import { useNavigation } from "@react-navigation/native"
@@ -8,6 +8,7 @@ import Link from "../Link"
 import ArticleDate from "../ArticleDate"
 import Headline from "../Headline"
 import FavoriteStar from "../FavoriteStar"
+import { FavoritesContext } from "../../utils/store"
 
 interface Props {
 	article: Article
@@ -15,6 +16,11 @@ interface Props {
 
 const ArticleCard: React.FC<Props> = ({ article }) => {
 	const navigation = useNavigation()
+	const { favorites, handleSelection } = useContext(FavoritesContext)
+
+	const handleStarPress = () => {
+		handleSelection(article.title)
+	}
 
 	return (
 		<ArticleWrapper>
@@ -30,11 +36,14 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 			<TextWrapper>
 				<Row>
 					<ArticleDate publishDate={article.publishedAt} />
-					<FavoriteStar />
+					<FavoriteStar
+						onPress={handleStarPress}
+						isFavorited={favorites.indexOf(article.title) !== -1}
+					/>
 				</Row>
 				<Headline>{article.title}</Headline>
 				<Link
-					handleOnPress={(): void =>
+					onPress={(): void =>
 						navigation.navigate("HeadlineDetails", { article })
 					}
 					alignment="right"

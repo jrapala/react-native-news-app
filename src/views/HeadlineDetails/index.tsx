@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Dimensions, Linking, SafeAreaView, Text, View } from "react-native"
 import { RouteProp } from "@react-navigation/native"
 import styled from "styled-components/native"
@@ -9,6 +9,7 @@ import ArticleDate from "../../components/ArticleDate"
 import FavoriteStar from "../../components/FavoriteStar"
 import Headline from "../../components/Headline"
 import Link from "../../components/Link"
+import { FavoritesContext } from "../../utils/store"
 
 type HeadlineDetailsScreenRouteProp = RouteProp<
 	RootStackParamList,
@@ -20,13 +21,21 @@ interface Props {
 
 const HeadlineDetails: React.FC<Props> = ({ route }) => {
 	const article = route.params.article
+	const { favorites, handleSelection } = useContext(FavoritesContext)
+
+	const handleStarPress = () => {
+		handleSelection(article.title)
+	}
 
 	return (
 		<StyledSafeAreaView>
 			<Container>
 				<Row>
 					<ArticleDate publishDate={article.publishedAt} />
-					<FavoriteStar />
+					<FavoriteStar
+						onPress={handleStarPress}
+						isFavorited={favorites.indexOf(article.title) !== -1}
+					/>
 				</Row>
 				<Headline>{article.title}</Headline>
 				<Author>{article.author}</Author>
@@ -40,7 +49,7 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 				<Description>{article.description}</Description>
 				<Link
 					alignment="left"
-					handleOnPress={() => Linking.openURL(article.url || "")}
+					onPress={() => Linking.openURL(article.url || "")}
 				>
 					Go to Full Article
 				</Link>

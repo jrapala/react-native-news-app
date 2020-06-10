@@ -9,6 +9,7 @@ import { RootStackParamList } from "./types/navigation"
 import { iOSDarkTheme } from "./styles"
 import TopHeadlines from "./views/TopHeadlines"
 import HeadlineDetails from "./views/HeadlineDetails"
+import { FavoritesProvider } from "./utils/store"
 
 const Stack = createStackNavigator<RootStackParamList>()
 
@@ -43,7 +44,9 @@ const App: React.FC = () => {
 		<NavigationContainer>
 			<ThemeProvider theme={theme}>
 				<StatusBar barStyle="dark-content" />
-				<StackNavigator />
+				<FavoritesProvider>
+					<StackNavigator />
+				</FavoritesProvider>
 			</ThemeProvider>
 		</NavigationContainer>
 	)

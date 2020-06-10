@@ -4,16 +4,16 @@ import styled from "styled-components/native"
 
 interface Props {
 	alignment: string
-	handleOnPress: ((event: GestureResponderEvent) => void) | undefined
+	onPress: ((event: GestureResponderEvent) => void) | undefined
 }
 
 interface ButtonTextProps {
 	alignment: string
 }
 
-const Link: React.FC<Props> = ({ alignment, children, handleOnPress }) => {
+const Link: React.FC<Props> = ({ alignment, children, onPress }) => {
 	return (
-		<TouchableOpacity onPress={handleOnPress}>
+		<TouchableOpacity onPress={onPress}>
 			<ButtonText alignment={alignment}>{children}</ButtonText>
 		</TouchableOpacity>
 	)
