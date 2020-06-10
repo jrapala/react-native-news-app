@@ -7,7 +7,7 @@ import AutoHeightImage from "react-native-auto-height-image"
 import { Article } from "../../types/article"
 import Link from "../Link"
 import ArticleDate from "../ArticleDate"
-import Headline from "../Headline"
+import ArticleTitle from "../ArticleTitle"
 import FavoriteStar from "../FavoriteStar"
 import { FavoritesContext } from "../../utils/store"
 
@@ -43,7 +43,7 @@ const ArticleCard: React.FC<Props> = ({ article }) => {
 							}
 						/>
 					</Row>
-					<Headline>{article.title}</Headline>
+					<ArticleTitle>{article.title}</ArticleTitle>
 					<Link
 						onPress={(): void =>
 							navigation.navigate("HeadlineDetails", { article })

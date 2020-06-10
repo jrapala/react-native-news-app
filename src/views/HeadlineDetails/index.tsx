@@ -7,7 +7,7 @@ import AutoHeightImage from "react-native-auto-height-image"
 import { RootStackParamList } from "../../types/navigation"
 import ArticleDate from "../../components/ArticleDate"
 import FavoriteStar from "../../components/FavoriteStar"
-import Headline from "../../components/Headline"
+import ArticleTitle from "../../components/ArticleTitle"
 import Link from "../../components/Link"
 import { FavoritesContext } from "../../utils/store"
 
@@ -37,7 +37,7 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 						isFavorited={favorites.indexOf(article.title) !== -1}
 					/>
 				</Row>
-				<Headline>{article.title}</Headline>
+				<ArticleTitle>{article.title}</ArticleTitle>
 				<Author>{article.author}</Author>
 				{article.urlToImage && (
 					<AutoHeightImage
