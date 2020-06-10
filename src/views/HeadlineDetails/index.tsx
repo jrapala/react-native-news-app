@@ -1,5 +1,5 @@
 import React from "react"
-import { Dimensions, SafeAreaView, Text, View } from "react-native"
+import { Dimensions, Linking, SafeAreaView, Text, View } from "react-native"
 import { RouteProp } from "@react-navigation/native"
 import styled from "styled-components/native"
 import AutoHeightImage from "react-native-auto-height-image"
@@ -8,6 +8,7 @@ import { RootStackParamList } from "../../types/navigation"
 import ArticleDate from "../../components/ArticleDate"
 import FavoriteStar from "../../components/FavoriteStar"
 import Headline from "../../components/Headline"
+import Link from "../../components/Link"
 
 type HeadlineDetailsScreenRouteProp = RouteProp<
 	RootStackParamList,
@@ -37,6 +38,12 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 					/>
 				)}
 				<Description>{article.description}</Description>
+				<Link
+					alignment="left"
+					handleOnPress={() => Linking.openURL(article.url || "")}
+				>
+					Go to Full Article
+				</Link>
 			</Container>
 		</StyledSafeAreaView>
 	)
