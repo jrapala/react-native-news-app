@@ -3,6 +3,8 @@ import { TouchableOpacity, GestureResponderEvent } from "react-native"
 import { ThemeContext } from "styled-components/native"
 import { Icon } from "react-native-elements"
 
+import normalize from "../../utils/normalize"
+
 interface Props {
 	isFavorited: boolean
 	onPress: ((event: GestureResponderEvent) => void) | undefined
@@ -21,7 +23,7 @@ const FavoriteStar: React.FC<Props> = ({ isFavorited, onPress }) => {
 						? themeContext.starSelectedColor
 						: themeContext.starUnselectedColor
 				}
-				size={30}
+				size={normalize(23)}
 			/>
 		</TouchableOpacity>
 	)

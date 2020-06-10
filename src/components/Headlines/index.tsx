@@ -6,6 +6,7 @@ import { useQuery } from "@apollo/react-hooks"
 import { Article } from "../../types/article"
 import ArticleCard from "../../components/ArticleCard"
 import { GET_TOP_HEADLINES } from "../../graphql/queries"
+import normalize from "../../utils/normalize"
 
 const Headlines: React.FC = () => {
 	const { loading, error, data, refetch } = useQuery(GET_TOP_HEADLINES)
@@ -52,7 +53,7 @@ const Error = styled(View)`
 	justify-content: center;
 `
 const ErrorText = styled(Text)`
-	font-size: 20px;
+	font-size: ${normalize(15) + "px"};
 `
 
 const StyledFlatList = styled(FlatList as new () => FlatList<Article>)`

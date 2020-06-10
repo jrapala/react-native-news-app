@@ -11,6 +11,7 @@ import FavoriteStar from "../../components/FavoriteStar"
 import ArticleTitle from "../../components/ArticleTitle"
 import Link from "../../components/Link"
 import { FavoritesContext } from "../../utils/store"
+import normalize from "../../utils/normalize"
 
 type HeadlineDetailsScreenRouteProp = RouteProp<
 	RootStackParamList,
@@ -39,23 +40,27 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 					/>
 				</Row>
 				<ArticleTitle>{article.title}</ArticleTitle>
-				<Author>{article.author}</Author>
+				{article.author && <Author>{article.author}</Author>}
 				{article.urlToImage && (
-					<AutoHeightImage
+					<StyledAutoHeightImage
 						accessibilityIgnoresInvertColors={false}
 						source={{ uri: article.urlToImage }}
-						width={Dimensions.get("window").width * 0.8}
+						width={Dimensions.get("screen").width * 0.8}
 					/>
 				)}
-				<Description>{article.description}</Description>
-				<Link
-					alignment="left"
-					onPress={(): Promise<string> =>
-						Linking.openURL(article.url || "")
-					}
-				>
-					Go to Full Article
-				</Link>
+				{article.description && (
+					<Description>{article.description}</Description>
+				)}
+				{article.url && (
+					<Link
+						alignment="left"
+						onPress={(): Promise<string> =>
+							Linking.openURL(article.url || "")
+						}
+					>
+						Go to Full Article
+					</Link>
+				)}
 			</Container>
 		</StyledSafeAreaView>
 	)
@@ -81,13 +86,17 @@ const Row = styled(View)`
 
 const Author = styled(Text)`
 	color: ${(props): string => props.theme.secondaryFontColor};
-	font-size: 17px;
+	font-size: ${normalize(13) + "px"};
 	font-weight: 600;
-	margin-vertical: 5%;
+	margin-top: 5%;
+`
+
+const StyledAutoHeightImage = styled(AutoHeightImage)`
+	margin-top: 5%;
 `
 
 const Description = styled(Text)`
-	font-size: 17px;
+	font-size: ${normalize(13) + "px"};
 	margin-top: 5%;
 `
 

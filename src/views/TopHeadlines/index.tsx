@@ -4,6 +4,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 import styled from "styled-components/native"
 
 import Headlines from "../../components/Headlines"
+import normalize from "../../utils/normalize"
 
 const TopHeadlines: React.FC = () => {
 	return (
@@ -30,7 +31,7 @@ const Container = styled(View)`
 
 const H1 = styled(Text)`
 	color: ${(props): string => props.theme.primaryFontColor};
-	font-size: 34px;
+	font-size: ${normalize(26) + "px"};
 	font-weight: 700;
 `
 
