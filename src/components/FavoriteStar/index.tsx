@@ -14,7 +14,11 @@ const FavoriteStar: React.FC<Props> = ({ isFavorited, onPress }) => {
 	const themeContext = useContext(ThemeContext)
 
 	return (
-		<TouchableOpacity onPress={onPress}>
+		<TouchableOpacity
+			onPress={onPress}
+			accessibilityLabel="Add to Favorites"
+			accessibilityHint="Add item to list of favorite articles"
+		>
 			<Icon
 				name={isFavorited ? "star" : "star-border"}
 				type="materialicon"

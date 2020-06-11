@@ -5,7 +5,7 @@ const { width: SCREEN_WIDTH } = Dimensions.get("window")
 // Based on iPhone 5s's scale
 const scale = SCREEN_WIDTH / 320
 
-const checkIfTablet = () => {
+const checkIfTablet = (): boolean => {
 	const pixelDensity = PixelRatio.get()
 	const adjustedWidth = SCREEN_WIDTH * pixelDensity
 	const adjustedHeight = SCREEN_WIDTH * pixelDensity
@@ -13,12 +13,13 @@ const checkIfTablet = () => {
 		return true
 	} else {
 		return (
-			pixelDensity === 2 && (adjustedWidth >= 1920 || adjustedHeight >= 1920)
+			pixelDensity === 2 &&
+			(adjustedWidth >= 1920 || adjustedHeight >= 1920)
 		)
 	}
 }
 
-export default function normalize(size: number) {
+export default function normalize(size: number): number {
 	const isTablet = checkIfTablet()
 	const newSize = isTablet ? (size * scale) / 2 : size * scale
 	if (Platform.OS === "ios") {
