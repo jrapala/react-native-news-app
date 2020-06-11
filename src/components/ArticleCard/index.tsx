@@ -78,10 +78,12 @@ const ArticleWrapper = styled(View)<DimensionProps>`
 		props.isLandscape ? "center" : "stretch"};
 	background-color: ${(props): string => props.theme.backgroundColor};
 	border-radius: ${(props): string => props.theme.borderRadius};
+	elevation: 5;
 	flex-direction: ${(props): string =>
 		props.isLandscape ? "row" : "column"};
 	margin-bottom: ${(props): string => (props.isLandscape ? "5%" : "10%")};
 	overflow: hidden;
+	position: relative;
 	width: ${(props): string => (props.isLandscape ? "80%" : "95%")};
 `
 
