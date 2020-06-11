@@ -18,7 +18,8 @@ const useScreenDimensions = (): ScreenDimensions => {
 
 		Dimensions.addEventListener("change", handleChange)
 
-		return () => Dimensions.removeEventListener("change", handleChange)
+		return (): void =>
+			Dimensions.removeEventListener("change", handleChange)
 	})
 
 	return {
