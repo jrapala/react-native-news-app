@@ -18,7 +18,7 @@ API_KEY=YOURKEYHERE
 
 ### Running iOS on a Mac via a simulator
 
-If you wish to install using [Bundler](https://[reactnative.dev/docs/environment-setup](https://bundler.io/)), please see the advanced iOS install instructions at the end of this README. Otherwise, make sure you have a version of CocoaPods installed, and run the following commands:
+If you wish to install using [Bundler](https://bundler.io/), please see the advanced iOS install instructions at the end of this README. Otherwise, make sure you have a version of CocoaPods installed, and run the following commands:
 
 ```
 npm i
@@ -49,31 +49,31 @@ Before starting development, I created a quick UI design in Sketch with a simple
 
 To start development, I cloned [my own personal React Native project template repo](https://github.com/jrapala/react-native-template) which includes the following:
 
-- A TypeScript config
-- Lots of fun ESLint rules
-- Stylelint rules
-- Prettier rules
-- A styled-components setup with a very basic theme and design system
-- A Bundler set up to maintain consistent iOS environments
+-   A TypeScript config
+-   Lots of fun ESLint rules
+-   Stylelint rules
+-   Prettier rules
+-   A styled-components setup with a very basic theme and design system
+-   A Bundler set up to maintain consistent iOS environments
 
-The rest of the app was built on top of this template. 
+The rest of the app was built on top of this template.
 
 Some items of note:
 
-- The React Context API is used to manage the state of the starred articles. No ids were provided in the News API article payloads, so I'm using the article title as a unique identifier. I'm making the assumption that titles will not be repeated.
-- I did not find a GraphQL endpoint for the News API, so I wrapped the REST API in a GraphQL layer.
-- This incorporates one theme -- a light mode iOS theme. Ideally, I would have themes for light and dark modes for both iOS and Android.  
+-   The React Context API is used to manage the state of the starred articles. No ids were provided in the News API article payloads, so I'm using the article title as a unique identifier. I'm making the assumption that titles will not be repeated.
+-   I did not find a GraphQL endpoint for the News API, so I wrapped the REST API in a GraphQL layer.
+-   This incorporates one theme -- a light mode iOS theme. Ideally, I would have themes for light and dark modes for both iOS and Android.
 
 ## Ideas for Future Development
 
--   Add a test suits that includes unit tests, integration tests, and E2E tests. 
+-   Add a test suite that includes unit tests, integration tests, and E2E tests.
 -   Device specific themes (iOS and Android), as well as dark and light themes for both platforms.
 -   Add a Splash Screen.
 -   Add an app icon.
 -   Add tablet specific UI designs. Perhaps render multiple article cards per row?
 -   Add better transition animations. Perhaps a shared element transition (the image being the shared element) when navigating from the headlines to the details page?
 -   Add loading indicators or placeholders for images as they load.
--	Lazy load additional articles are user scrolls through the list.
+-   Lazy load additional articles as the user scrolls through the list.
 
 ## Screenshots
 
