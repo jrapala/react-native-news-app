@@ -63,6 +63,7 @@ Some items of note:
 -   The React Context API is used to manage the state of the starred articles. No ids were provided in the News API article payloads, so I'm using the article title as a unique identifier. I'm making the assumption that titles will not be repeated.
 -   I did not find a GraphQL endpoint for the News API, so I wrapped the REST API in a GraphQL layer.
 -   This incorporates one theme -- a light mode iOS theme. Ideally, I would have themes for light and dark modes for both iOS and Android.
+-   A component directory structure is used to keep future Storybook stories, component tests, and snapshot tests together in one location.
 
 ## Ideas for Future Development
 
@@ -74,6 +75,7 @@ Some items of note:
 -   Add better transition animations. Perhaps a shared element transition (the image being the shared element) when navigating from the headlines to the details page?
 -   Add loading indicators or placeholders for images as they load.
 -   Lazy load additional articles as the user scrolls through the list.
+-   Accessibility tests using VoiceOver and TalkBack
 
 ## Screenshots
 
