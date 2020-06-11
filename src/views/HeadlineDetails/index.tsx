@@ -40,7 +40,7 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 					/>
 				</Row>
 				<ArticleTitle>{article.title}</ArticleTitle>
-				{article.author && <Author>{article.author}</Author>}
+				{article.author ? <Author>{article.author}</Author> : null}
 				{article.urlToImage && (
 					<StyledAutoHeightImage
 						accessibilityIgnoresInvertColors={false}
@@ -48,10 +48,10 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 						width={Dimensions.get("screen").width * 0.8}
 					/>
 				)}
-				{article.description && (
+				{article.description ? (
 					<Description>{article.description}</Description>
-				)}
-				{article.url && (
+				) : null}
+				{article.url ? (
 					<Link
 						alignment="left"
 						onPress={(): Promise<string> =>
@@ -60,7 +60,7 @@ const HeadlineDetails: React.FC<Props> = ({ route }) => {
 					>
 						Go to Full Article
 					</Link>
-				)}
+				) : null}
 			</Container>
 		</StyledSafeAreaView>
 	)
