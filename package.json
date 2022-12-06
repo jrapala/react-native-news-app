@@ -23,7 +23,7 @@
 		"graphql": "15.1.0",
 		"graphql-anywhere": "4.2.7",
 		"graphql-tag": "2.10.3",
-		"qs": "6.9.4",
+		"qs": "6.9.7",
 		"react": "16.11.0",
 		"react-native": "0.62.2",
 		"react-native-auto-height-image": "3.2.1",
